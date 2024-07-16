@@ -34,6 +34,8 @@ def get_mainpage_weather():
             
 
             start_time_str = wx_time_data['startTime']
+            if start_time_str.endswith("00:00:00"):
+                continue
             date_str = start_time_str.split(" ")[0]
             date_obj = datetime.strptime(date_str, "%Y-%m-%d")
             weekday_str = week_list[date_obj.weekday()]
