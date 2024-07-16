@@ -75,12 +75,12 @@ export function tableUpdate() {
             container.style.flexDirection = "column";
             let day_temperature = document.createElement("span");
             day_temperature.className = "weekly-temperature";
-            day_temperature.textContent = "早: " + locationData.MinAT[i].day + '~' + locationData.MaxAT[i].day + '°C';
-            let night_temperature = document.createElement("span");
-            night_temperature.className = "weekly-temperature";
-            night_temperature.textContent = "晚: " + locationData.MinAT[i].night + '~' + locationData.MaxAT[i].night + '°C';
+            day_temperature.textContent = locationData.MinAT[i].day + '~' + locationData.MaxAT[i].day + '°C';
+            //let night_temperature = document.createElement("span");
+            //night_temperature.className = "weekly-temperature";
+            //night_temperature.textContent = "晚: " + locationData.MinAT[i].night + '~' + locationData.MaxAT[i].night + '°C';
             container.appendChild(day_temperature);
-            container.appendChild(night_temperature);
+            //container.appendChild(night_temperature);
             columnRealFeel.appendChild(container);
         };
 
