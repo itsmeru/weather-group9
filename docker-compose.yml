@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    image: itsmeru/weather:latest
+    env_file:
+      - .env
+    volumes:
+      - /weather:/app
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+
+  
