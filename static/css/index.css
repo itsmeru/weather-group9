@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#main-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: #0f6f80;
+    color: #ffffff;
+    text-align: center;
+}
+
+thead tr th,
+thead tr th p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    border-bottom: 3px solid #dddddd;
+    background-color: #f3f3f3;
+}
+
+.weekend {
+    background-color: darkred;
+}
+
+.location {
+    background-color: #0f6f80;
+    cursor: pointer;
+    text-align: center;
+}
+.location a {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.fa-plus-square {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 2px;
+    transition: all 0.3s;
+}
+.fa-plus-square:hover {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.data {
+    text-align: center;
+}
+
+.main-content1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.temp-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.main-content1-text {
+    color: #1a67b1;
+    font-weight: bold;
+    font-size: 26px;
+    margin-left: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #1a67b1;
+}
+
+.header-title {
+    margin-right: auto;
+    display: flex;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: "Noto Sans TC", sans-serif;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 104px;
+    background-color: #757575;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content-container {
+    width: 350px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 13.3px;
+    text-align: left;
+    color: #ffffff;
+    width: auto;
+    height: 14px;
+    top: 5px;
+}
+
+@media (max-width: 1200px) {
+    #main-wrapper {
+        width: 85vw;
+    }
+}
