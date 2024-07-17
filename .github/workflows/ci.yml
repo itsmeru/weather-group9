@@ -1,42 +1,25 @@
 name: CI
 
-on:
-  push:
-    branches: [ develop, main ]
-  pull_request:
-    branches: [ develop, main ]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
+    - uses: actions/checkout@v3  # 使用更新版本
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # 使用更新版本
       with:
-        python-version: '3.9'
-
+        python-version: '3.x'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Start Uvicorn server
-      run: nohup uvicorn app:app &
-      shell: bash
-
-    - name: Wait for server to start
-      run: sleep 5
-
-    - name: Run tests
+        pip install flake8 pytest
+    - name: Lint with flake8
       run: |
-        pytest tests/
-      shell: bash
-
-    - name: Stop Uvicorn server
-      run: pkill uvicorn
-      shell: bash
+        flake8 .
+    - name: Test with pytest
+      run: |
+        pytest
 
