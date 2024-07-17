@@ -2,8 +2,8 @@
 
 ## 目錄
 
--   [團隊分工](URL)
--   [成果展示](URL)
+-   [團隊分工](https://github.com/hjolie/weather-group9/tree/develop#團隊分工)
+-   [成果展示](https://github.com/hjolie/weather-group9/tree/develop#成果展示)
 
 ## 團隊分工
 
