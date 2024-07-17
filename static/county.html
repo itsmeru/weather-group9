@@ -3,10 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/county.css" />
-        <title>County Page</title>
+        <link rel="stylesheet" href="/static/css/county.css" />
+        <title>Weather Forecase</title>
     </head>
     <body>
-        <script src="/js/county.js"></script>
+        <div class = "header">
+            <div class = "header-title" onclick="window.location.href='/'">交通部中央氣象署</div>
+        </div>
+        <div  class = "main">
+            <div class = "main-content1">
+                <img src ="/static/css/image/temp_icon.png" class = "temp-icon"/>
+                <div class = "main-content1-text"></div>
+            </div>
+            <div class = "main-content2">
+                <div class = "time-container1"></div>
+                <div class = "time-container2"></div>
+                <div class = "time-container3"></div>
+            </div>
+            <div class = "main-content3">
+                <form>
+                    <label>選擇縣市</label>
+                    <div class = "select-container">
+                        <select class = "county-select"></select>
+                        <button onclick = "submitButton(event)">確認</button>
+                    </div>
+                </form>
+            </div>
+            <div class = "main-content4">
+                <div class = "column-name">
+                   <div class = "city-name"></div>
+                </div>
+                <div class = "column-day">
+                    <div>白天</div>
+                </div>
+                <div class = "column-night">
+                    <div>晚上</div>
+                </div>
+                <div class = "column-real-feel">
+                    <div>體感溫度</div>
+                </div>
+                <div class = "column-UV-ray">
+                    <div>紫外線</div>
+                </div>
+            </div>
+        </div>
+        <div class = "footer">
+            <div class = "footer-content-container">
+                <div class = "footer-content">COPYRIGHT © 2024 交通部中央氣象署</div>
+            </div>
+        </div>
+        <script type = "module" src="/static/js/county.js" defer></script>
     </body>
 </html>

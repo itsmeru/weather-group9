@@ -3,10 +3,45 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/index.css" />
-        <title>Weather Forecase</title>
+        <title>交通部中央氣象署 | 作業練習版</title>
+        <link rel="stylesheet" href="/static/css/index.css" />
+        <script
+            src="https://kit.fontawesome.com/e9955cfc96.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <script src="static/js/county.js"></script>
+        <div class="header">
+            <div class="header-title" onclick="window.location.href='/'">
+                交通部中央氣象署
+            </div>
+        </div>
+
+        <div id="main-wrapper">
+            <div class="main-content1">
+                <img src="/static/css/image/temp_icon.png" class="temp-icon" />
+                <div class="main-content1-text">全臺一週天氣預報</div>
+            </div>
+            <table id="table-container-lg-screen">
+                <thead>
+                    <tr id="title-container">
+                        <th>縣市</th>
+                        <th>時間</th>
+                    </tr>
+                </thead>
+            </table>
+            <table id="table-container-sm-screen"></table>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content-container">
+                <div class="footer-content">
+                    COPYRIGHT © 2024 交通部中央氣象署
+                </div>
+            </div>
+        </div>
+
+        <script src="/static/js/index.js"></script>
     </body>
 </html>
