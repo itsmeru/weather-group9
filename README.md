@@ -25,7 +25,6 @@
 
 -   與前端溝通首頁的資料需求與 API 回傳的資料格式
 -   以 FastAPI 建置首頁的後端，提供回傳前端全台縣市天氣預報之資料的 API
--   Docker 打包與網站部署
 
 ### 後端：劉晏儒
 
@@ -48,3 +47,11 @@
         ![](/static/css/image/county_1.png)
     -   透過下拉式選單選擇縣市名稱，可搜尋並切換至該縣市查看天氣詳情
         ![](/static/css/image/county_2.png)
+### Discord Bot
+-   設計一: 當 Bot 進入聊天室時，會提醒用戶如何輸入指令，並預設顯示台北市的天氣預報，包括氣溫、降雨機率和天氣狀況。
+    ![discord Bot](static/css/image/botopen.gif)
+-   設計二: 用戶可以輸入指令 !weather [縣市名]，例如 !weather 新北市，Bot 會回傳該地區的天氣預報。
+    -   支援輸入縣市全名，例如：台南市、新竹市、新竹縣等，亦可輸入地名，例如：台南。
+    -   若輸入新竹和嘉義等縣市名相同的地區，會優先輸出該市的天氣預報。
+
+    ![disocrd Bot Command](static/css/image/botcommand.gif)
