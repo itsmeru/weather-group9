@@ -17,11 +17,11 @@ def getWeekInfo(locationID: str):
     if response.status_code == 200:
         datas = response.json()["records"]["locations"][0]["location"]
         result = []
-        needIndex = [8, 12, 5, 11, 6, 9] # {8:minT,12:maxT,5:maxAt,11:minAt,6:Wx,9:UVI}
+        needIndex = [8, 12, 5, 11, 6,10] # {8:minT,12:maxT,5:maxAt,11:minAt,6:Wx,9:UVI,10:WeatherDescription}
         for data in datas:
             if data["locationName"] == locationID:
                 entry = {"city": data["locationName"]}
-                   
+                
                 for needI,index in enumerate(needIndex):
                     item = data["weatherElement"][index]
                     elementId = item["elementName"]  # MinT
@@ -32,6 +32,7 @@ def getWeekInfo(locationID: str):
                     if needI == len(needIndex) - 1: # UVI
                         for i in range(7):
                             date_str = item["time"][i]["startTime"].split(" ")[0]
+                            print(elementId)
                             date_obj = datetime.strptime(date_str, "%Y-%m-%d")
                             weekday_index = date_obj.strftime("%w")
                             weekday_chinese = weekdays[int(weekday_index)]
@@ -71,6 +72,8 @@ def getWeekInfo(locationID: str):
                                 
                 
                 result.append(entry)
+                with open("data.json","w",encoding="utf-8")as file:
+                    json.dump(result,file,ensure_ascii=False,indent=4)
                 return JSONResponse(content=result, media_type="application/json")
 
                 
