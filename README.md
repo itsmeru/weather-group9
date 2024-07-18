@@ -47,7 +47,6 @@
         ![](/static/css/image/county_1.png)
     -   因天氣資料隨時變動，在中午資料更新時紫外線小圖示會切換為天氣預報資料，並用按鈕選擇顯示完整內容與否
         ![](/static/css/image/county_3.png)
-        ![](/static/css/image/county_4.png)
     -   透過下拉式選單選擇縣市名稱，可搜尋並切換至該縣市查看天氣詳情
         ![](/static/css/image/county_2.png)
 ### Discord Bot
