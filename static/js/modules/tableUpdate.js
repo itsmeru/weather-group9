@@ -85,32 +85,67 @@ export function tableUpdate() {
         };
 
         //--------------處理周間紫外線資訊--------------
-        for(let i = 0; i < 7; i++){
-            let container = document.createElement("div");
-            container.style.backgroundColor = "#fff";
-            container.style.flexDirection = "column";
-            let uvValue = document.createElement("uv-value");
-            uvValue.className = "uv-value";
-            uvValue.textContent = locationData.UVI[i].uv;
-            if (locationData.UVI[i].uv < 2){
-                container.classList.add("UV-ray-container", "green");
-            }
-            else if (locationData.UVI[i].uv < 5){
-                container.classList.add("UV-ray-container", "orange");
-            }
-            else if (locationData.UVI[i].uv < 7){
-                container.classList.add("UV-ray-container", "yellow");
-            }
-            else if (locationData.UVI[i].uv < 10){
-                container.classList.add("UV-ray-container", "red");
-            }
-            else{
-                container.classList.add("UV-ray-container", "purple");
-            }
-            container.appendChild(uvValue);
-            columnUVRay.appendChild(container);
-        };
+        if (locationData.UVI){
+            for(let i = 0; i < 7; i++){
+                let container = document.createElement("div");
+                container.style.backgroundColor = "#fff";
+                container.style.flexDirection = "column";
+                let uvValue = document.createElement("uv-value");
+                uvValue.className = "uv-value";
+                uvValue.textContent = locationData.UVI[i].uv;
+                if (locationData.UVI[i].uv < 2){
+                    container.classList.add("UV-ray-container", "green");
+                }
+                else if (locationData.UVI[i].uv < 5){
+                    container.classList.add("UV-ray-container", "orange");
+                }
+                else if (locationData.UVI[i].uv < 7){
+                    container.classList.add("UV-ray-container", "yellow");
+                }
+                else if (locationData.UVI[i].uv < 10){
+                    container.classList.add("UV-ray-container", "red");
+                }
+                else{
+                    container.classList.add("UV-ray-container", "purple");
+                }
+                container.appendChild(uvValue);
+                columnUVRay.appendChild(container);
+            };
+        }
+        else{
+            document.querySelector(".UV-ray").firstChild.textContent = "天氣預報";
+            for(let i = 0; i < 7; i++){
+                let container = document.createElement("div");
+                container.style.backgroundColor = "#fff";
+                container.style.flexDirection = "column";
+                let WeatherDescription = document.createElement("span");
+                WeatherDescription.className = "weather-description";
+                WeatherDescription.textContent = locationData.WeatherDescription[i].uv;
+                let expandButton = document.createElement("button");
+                expandButton.className = "expand-button";
+                expandButton.textContent = "+";
+                container.appendChild(WeatherDescription);
+                container.appendChild(expandButton);
+                expandButton.addEventListener('click', function(event) {
+                    //let columnUV = event.target.closest('.column-UV-ray');
+                    toggleExpand(document.querySelector('.column-UV-ray'));
+                });
 
+                function toggleExpand(container) {
+                    let computedStyle = window.getComputedStyle(container);
+                    let gridAutoRows = computedStyle.getPropertyValue('grid-auto-rows');
+                    
+                    if (gridAutoRows === '55px') {
+                        container.style.gridAutoRows = 'minmax(55px, auto)';
+                        document.querySelectorAll('.expand-button').forEach(btn => btn.textContent = "-");
+                    } else {
+                        container.style.gridAutoRows = '55px';
+                        document.querySelectorAll('.expand-button').forEach(btn => btn.textContent = "+");
+                    }
+                }
+                columnUVRay.appendChild(container);
+            };
+        }
 });
 };   
 
